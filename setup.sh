@@ -4,7 +4,7 @@ set -e
 echo "Updating system and installing Hyprland + dependencies..."
 sudo pacman -Syu --noconfirm
 
-sudo pacma-S --noconfirm \
+sudo pacman -S --noconfirm \
     hyprland xorg-xwayland xdg-desktop-portal-hyprland \
     waybar kitty dunst thunar pipewire pipewire-pulse wireplumber \
     wl-clipboard xdg-utils xdg-user-dirs \
