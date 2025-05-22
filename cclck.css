@@ -1,0 +1,146 @@
+        body {
+            background: linear-gradient(135deg, #2c2c2c, #3a3a3a);
+            color: #d0d0d0;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(40, 40, 40, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            color: #a0a0a0;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #a0a0a0;
+            margin: 0; /* Remove default margin */
+            padding: 10px 0; /* Consistent padding */
+            font-size: 20px;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        h2::after {
+            content: ' ▼';
+            font-size: 12px;
+            margin-left: 8px;
+        }
+
+        h2.collapsed::after {
+            content: ' ►';
+        }
+
+        .section {
+            margin: 10px 0;
+            background: rgba(60, 60, 60, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            max-height: 500px; /* Reduced max-height for efficiency */
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        .section.collapsed {
+            max-height: 40px; /* Adjusted to fit h2 properly */
+            overflow: hidden;
+        }
+
+        .content {
+            padding: 15px;
+            opacity: 1;
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        .section.collapsed .content {
+            opacity: 0;
+            height: 0;
+            padding: 0;
+        }
+
+        #statsSection {
+            margin: 10px 0;
+            padding: 15px;
+            background: rgba(60, 60, 60, 0.8);
+            border-radius: 10px;
+        }
+
+        #statsSection h2 {
+            cursor: default;
+            padding: 0; /* No extra padding for static section */
+        }
+
+        #statsSection h2::after {
+            content: '';
+        }
+
+        #cat {
+            width: 250px;
+            height: 250px;
+            margin: 30px auto;
+            cursor: pointer;
+            transition: transform 0.2s;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #cat:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        #cat:active {
+            transform: scale(0.95);
+        }
+
+        .button {
+            background: linear-gradient(45deg, #6b7280, #9ca3af);
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        .achievement, .pet-info {
+            color: #b0b0b0;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .effect {
+            position: absolute;
+            font-size: 20px;
+            color: #e0e0e0;
+            animation: fadeOut 1s forwards;
+            user-select: none;
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; transform: translateY(-20px); }
+        }
+
+        .hidden { display: none; }
